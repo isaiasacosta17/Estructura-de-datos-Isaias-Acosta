@@ -1,0 +1,3 @@
+C:/Users/PERSONAL/Desktop/Taller03_Trees/Arbol Binario/cmake-build-debug/CMakeFiles/Arbol_Binario.dir
+C:/Users/PERSONAL/Desktop/Taller03_Trees/Arbol Binario/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/PERSONAL/Desktop/Taller03_Trees/Arbol Binario/cmake-build-debug/CMakeFiles/rebuild_cache.dir
