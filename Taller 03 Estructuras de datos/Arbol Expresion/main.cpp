@@ -1,3 +1,9 @@
+//Isaías Acosta Herrera
+//Estructura de datos
+//Taller 03
+//Arbol Expresión
+//4 de octubre de 2024
+//John Corredor
 #include<iostream>
 #include "ArbolExpresion.h"
 #include "NodoExpresion.h"
@@ -42,7 +48,7 @@ using namespace std;
 	cout<<"Ejejrcicio 3\n";
 	cout<<"1. Construir Arbol de expresion "<<endl;
 	ArbolExpresion* aej = new ArbolExpresion();
-	string ejempl =�"*5-3+106++5-7/43*2-6";
+	string ejempl =´"*5-3+106++5-7/43*2-6";
 	aej->llenarDesdePrefija(ejempl);
 	cout<<"2. Imprimir Version Prefija"<<"=" << endl;
 	aej->obtenerPrefija(aej->getRaiz());
