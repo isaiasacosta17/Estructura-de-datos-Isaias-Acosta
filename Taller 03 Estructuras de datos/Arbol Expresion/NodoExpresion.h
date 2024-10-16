@@ -1,3 +1,9 @@
+//Isaías Acosta Herrera
+//Estructura de datos
+//Taller 03
+//Arbol Expresión
+//4 de octubre de 2024
+//John Corredor
 #ifndef NODOEXPRESION_H
 #define NODOEXPRESION_H
 #include <string.h>
