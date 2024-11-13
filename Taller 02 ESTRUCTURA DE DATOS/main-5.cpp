@@ -1,3 +1,8 @@
+//Isaías Acosta
+//Estructura de datos
+//John Corredor
+
+
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -8,12 +13,12 @@
 #include <stdexcept>
 
 using namespace std;
-
+// Estructura que representa un álbum musical
 struct Album {
     string nombre;
     int año;
 };
-
+// Estructura que representa una canción, incluyendo el álbum al que pertenece
 struct Cancion { 
     string nombre;
     string autor;
@@ -21,7 +26,7 @@ struct Cancion {
     Album album;
 };
 
-
+// Función que imprime una lista de canciones con sus detalles
 void imprimirCanciones(const list<Cancion>& canciones) {
     for (const auto& cancion : canciones) {
         cout << "Canción: " << cancion.nombre << endl;
@@ -34,13 +39,13 @@ void imprimirCanciones(const list<Cancion>& canciones) {
 }
 
 int main() {
-    list<Cancion> canciones;
-    bool repetir = true;
+    list<Cancion> canciones; // Lista para almacenar las canciones leídas del archivo
+    bool repetir = true;  // Variable para controlar el ciclo del menú
 
     while (repetir) {
         cout << "Bienvenido a javemusic, estas son sus canciones: " << endl;
 
-        // Leer el archivo
+        // Leer el archivo "archivo.txt" que contiene las canciones
         ifstream archivo("archivo.txt");
         if (archivo.is_open()) {
             string linea;
@@ -48,7 +53,8 @@ int main() {
                 istringstream ss(linea);
                 Cancion cancion;
                 string campo;
-
+                
+                // Leer y asignar los campos de la canción
                 try {
                     // Leer los campos de la línea
                     getline(ss, cancion.nombre, '|');
@@ -74,6 +80,7 @@ int main() {
         }
 
         int seleccion;
+         // Menú de opciones
         cout << endl;
         cout << "1. Listar todos los autores." << endl;
         cout << "2. Listar las canciones de un artista ordenado alfabéticamente." << endl;
@@ -83,10 +90,11 @@ int main() {
         cout << "Ingrese una opción: ";
         cin >> seleccion;
 
-        
+        // Ejecución de la opción seleccionada
         switch (seleccion) {
             case 1: {
-               
+                // Listar todos los autores sin duplicados y en orden alfabético
+                
                 list<string> autores;
                 for (const auto& cancion : canciones) {
                     autores.push_back(cancion.autor);
@@ -121,7 +129,7 @@ int main() {
                 break;
             }
             case 3: {
-              
+            // Listar todos los álbumes ordenados cronológicamente y sin duplicados  
                 vector<Album> albumes;
                 for (const auto& cancion : canciones) {
                     albumes.push_back(cancion.album);
@@ -181,7 +189,7 @@ int main() {
                 cout << "Opción no válida." << endl;
                 break;
         }
-
+         // Preguntar si el usuario quiere volver al menú principal
         cout << "¿Desea volver al menú principal? (1 para sí, 0 para no): ";
         cin >> repetir;
         if(repetir!=1 || repetir!=0){
